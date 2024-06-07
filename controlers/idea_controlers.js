@@ -1,6 +1,5 @@
 const idea=require("../models/ideas_models")
- let id
- =3 // initialize the count of id
+ let id=3 // initialize the count of id
 exports.Allideas=(req,res)=>{
                     res.status(200).send(idea)
 }
@@ -62,3 +61,20 @@ exports.getupdatedIdea=(req,res)=>{
                     // return the new updated idea body
 
 }
+
+// delete method
+exports.deleteIdea=(req,res)=>{
+                    // fetch the idea
+                    idea_id=req.params.id
+                    if(idea[idea_id]){
+                                        delete idea[idea_id]
+                                        res.status(200).send({
+                                                            message:"your idea is deleted successfully"
+                                        })
+                    }else{
+                                        res.status(404).send({
+                                                            message:"given idea's id is not present"
+                                        })
+                    }
+}
+
