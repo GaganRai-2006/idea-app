@@ -1,5 +1,6 @@
 const idea=require("../models/ideas_models")
- let id=3 // initialize the count of id
+ let id
+ =3 // initialize the count of id
 exports.Allideas=(req,res)=>{
                     res.status(200).send(idea)
 }
@@ -34,5 +35,30 @@ exports.getIdeaBybody=(req,res)=>{
 
                     // retrun the response
                     res.status(201).send(idea_obj)
+
+}
+
+//we want to update the idea
+exports.getupdatedIdea=(req,res)=>{
+                    //read the idea id
+                    idea_id=req.params.id
+
+                    //check if the idea id is present or not 
+                    if(idea[idea_id]){
+                                        idea_obj=req.body
+                                        idea[idea_id]=idea_obj
+                                        res.status(200).send(  idea[idea_id])
+
+                    }else{
+                                        res.status(404).send({
+                                                            error:"The idea Id is not found"
+                                        })
+                    }
+
+
+                    // read the new idea body and replace it
+
+
+                    // return the new updated idea body
 
 }

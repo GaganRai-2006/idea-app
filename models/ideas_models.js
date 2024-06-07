@@ -1,9 +1,9 @@
 module.exports={
                     1:{
-                    id:1,
-                    idea:"my first idea",
-                    idea_author:"Rai",
-                    idea_description:"this one of the finest idea"
+                                        id:1,
+                                        idea:"my first idea",
+                                        idea_author:"Jack",
+                                        idea_description:"this is one of the first finest idea"
                     },
 
                     2:{
